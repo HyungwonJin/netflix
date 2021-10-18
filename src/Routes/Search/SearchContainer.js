@@ -39,7 +39,7 @@ class Search extends React.Component {
             searchTerm,
             error,
             loading } = this.state;
-        console.log(this.state);
+
         return (
             <SearchPresenter
                 movieResults={movieResults}
