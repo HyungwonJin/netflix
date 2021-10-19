@@ -29,11 +29,9 @@ class Detail extends React.Component {
         let result = null;
         try {
             if (isMovie) {
-                const request = await moviesApi.moiveDetail(parsedId);
-                result = request.data;
+                ({ data: result } = await moviesApi.moiveDetail(parsedId));
             } else {
-                const request = await tvApi.showDetail(parsedId);
-                result = request.data;
+                ({ data: result } = await tvApi.showDetail(parsedId));
             }
             console.log(result);
         } catch {
