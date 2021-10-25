@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from "styled-components";
 
 import Section from "Components/Section";
+import Loader from "Components/Loader";
 
 const Container = styled.div`
     padding: 10px 10px;
@@ -14,7 +15,7 @@ const HomePresenter = ({
     popular,
     error,
     loading,
-}) => loading ? null :
+}) => loading ? <Loader /> :
         <Container>
             {nowPlaying && nowPlaying.length > 0 && (
                 <Section title="Now Playing">{nowPlaying.map(movie => movie.title)}</Section>
