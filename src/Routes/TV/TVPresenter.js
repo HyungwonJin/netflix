@@ -33,6 +33,8 @@ const TVPresenter = ({
             )}
         </Container>);
 
+
+// eslint-disable-next-line react/no-typos
 TVPresenter.PropTypes = {
     topRated: PropTypes.array,
     popular: PropTypes.array,
