@@ -16,30 +16,29 @@ class Detail extends React.Component {
 
     async componentDidMount() {
         const {
-            match: {
-                params: { id }
-            },
-            history: { push },
+          match: {
+            params: { id }
+          },
+          history: { push }
         } = this.props;
         const { isMovie } = this.state;
         const parsedId = parseInt(id);
         if (isNaN(parsedId)) {
-            return push('/');
+          return push("/");
         }
         let result = null;
         try {
-            if (isMovie) {
-                ({ data: result } = await moviesApi.moiveDetail(parsedId));
-            } else {
-                ({ data: result } = await tvApi.showDetail(parsedId));
-            }
-            console.log(result);
+          if (isMovie) {
+            ({ data: result } = await moviesApi.movieDetail(parsedId));
+          } else {
+            ({ data: result } = await tvApi.showDetail(parsedId));
+          }
         } catch {
-            this.setState({ error: "Can't find anything." });
+          this.setState({ error: "Can't find anything." });
         } finally {
-            this.setState({ loading: false, result });
+          this.setState({ loading: false, result });
         }
-    }
+      }
 
     render() {
         const { result, error, loading } = this.state;

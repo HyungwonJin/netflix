@@ -8,7 +8,7 @@ import Message from "Components/Message";
 import Poster from "Components/Poster";
 
 const Container = styled.div`
-    padding: 10px 10px;
+    padding: 20px;
 `;
 
 const HomePresenter = ({
@@ -60,12 +60,12 @@ const HomePresenter = ({
         </Container>;
 
 // eslint-disable-next-line react/no-typos
-HomePresenter.PropTypes = {
+HomePresenter.propTypes = {
     nowPlaying: PropTypes.array,
-    upcoming: PropTypes.array,
     popular: PropTypes.array,
-    error: PropTypes.bool.isRequired,
-    loading: PropTypes.string,
-}
+    upcoming: PropTypes.array,
+    loading: PropTypes.bool.isRequired,
+    error: PropTypes.string
+};
 
 export default HomePresenter;
